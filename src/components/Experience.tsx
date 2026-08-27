@@ -13,7 +13,7 @@ export default function Experience() {
         {experience.map((entry, i) => (
           <Reveal key={`${entry.company}-${entry.period}`} delay={i * 60}>
             <li className="relative list-none">
-              <span className="absolute -left-[calc(2rem+5px)] top-1.5 h-2.5 w-2.5 rounded-full bg-accent" />
+              <span className="absolute -left-9.25 top-1.5 h-2.5 w-2.5 rounded-full bg-accent" />
               <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
                 <h3 className="text-lg font-semibold">
                   {entry.role} <span className="text-muted">— {entry.company}</span>
