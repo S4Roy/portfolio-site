@@ -103,4 +103,4 @@ pm2 restart portfolio-site
 
 - An Elastic IP is worth attaching so the public IP doesn't change on instance stop/start.
 - `t3.micro` is fine for a static portfolio's traffic; scale up only if needed.
-- Resume files (`assets/`, `public/Subhankar_Roy_Resume.pdf`) and the profile photo (`public/profile.png`) are committed to the repo, so `git clone` brings them along — no separate upload step needed.
+- Resume files (`assets/`, `public/Subhankar_Roy_Full_Stack_Developer_Resume.pdf`) and the profile photo (`public/profile.png`) are committed to the repo, so `git clone` brings them along — no separate upload step needed.

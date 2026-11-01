@@ -29,7 +29,7 @@ export default function Hero() {
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <a
-              href="/Subhankar_Roy_Resume.pdf"
+              href="/Subhankar_Roy_Full_Stack_Developer_Resume.pdf"
               download
               className="rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-accent-strong hover:shadow-lg hover:shadow-accent/20"
             >

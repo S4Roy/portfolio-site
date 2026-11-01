@@ -1,5 +1,5 @@
 # SUBHANKAR ROY
-Full Stack Developer | Angular | TypeScript | Node.js | MongoDB
+Full Stack Developer | MEAN Stack | Angular | Node.js | TypeScript
 
 Kolkata, West Bengal, India | +91 89067 87168 | subhankarroylive@gmail.com
 LinkedIn: https://www.linkedin.com/in/s4roy/ | Portfolio: https://subhankar.baseweb.in

@@ -25,7 +25,7 @@ export default function Nav() {
           ))}
         </nav>
         <a
-          href="/Subhankar_Roy_Resume.pdf"
+          href="/Subhankar_Roy_Full_Stack_Developer_Resume.pdf"
           download
           className="rounded-full border border-border px-4 py-1.5 text-sm font-medium transition-colors hover:border-accent hover:text-accent-strong"
         >

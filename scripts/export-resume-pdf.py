@@ -15,7 +15,7 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / 'docs/Subhankar_Roy_ATS_Resume.md'
-OUTPUT = ROOT / 'assets/Subhankar_Roy_Resume.pdf'
+OUTPUT = ROOT / 'assets/Subhankar_Roy_Full_Stack_Developer_Resume.pdf'
 
 # Embed regular and bold faces so emphasis renders consistently in PDF viewers.
 font_root = Path('/System/Library/Fonts/Supplemental')
@@ -79,7 +79,7 @@ for line in SOURCE.read_text().splitlines():
     previous_role = key == 'role'
 
 OUTPUT.parent.mkdir(exist_ok=True)
-doc = SimpleDocTemplate(str(OUTPUT), pagesize=A4, rightMargin=40, leftMargin=40, topMargin=32, bottomMargin=32, title='Subhankar Roy - Full Stack Developer Resume', author='Subhankar Roy')
+doc = SimpleDocTemplate(str(OUTPUT), pagesize=A4, rightMargin=40, leftMargin=40, topMargin=32, bottomMargin=32, title='Subhankar Roy - Full Stack Developer - MEAN Stack', author='Subhankar Roy')
 doc.build(story)
-shutil.copyfile(OUTPUT, ROOT / 'public/Subhankar_Roy_Resume.pdf')
+shutil.copyfile(OUTPUT, ROOT / 'public/Subhankar_Roy_Full_Stack_Developer_Resume.pdf')
 print(f'Updated {OUTPUT} and public download.')
