@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { profile, coreStack } from "@/lib/data";
+import { profile, coreStack, highlights } from "@/lib/data";
 
 export default function Hero() {
   return (
@@ -18,6 +18,11 @@ export default function Hero() {
           <p className="mt-3 text-lg text-muted sm:text-xl">
             {profile.title} &middot; {profile.tagline}
           </p>
+          <p className="mt-4 text-sm text-muted">{profile.location}</p>
+          <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1 text-xs font-medium text-accent">
+            <span className="h-2 w-2 rounded-full bg-emerald-500" aria-hidden="true" />
+            {profile.availability}
+          </div>
           <p className="mt-6 text-base leading-relaxed text-muted">
             {profile.summary}
           </p>
@@ -68,6 +73,16 @@ export default function Hero() {
           </div>
         </div>
       </div>
+
+      <dl className="mt-12 grid gap-4 sm:grid-cols-3">
+        {highlights.map((item) => (
+          <div key={item.label} className="rounded-2xl border border-border bg-surface p-5">
+            <dt className="text-sm font-medium text-muted">{item.label}</dt>
+            <dd className="mt-2 text-2xl font-bold tracking-tight text-accent">{item.value}</dd>
+            <dd className="mt-1 text-xs leading-relaxed text-muted">{item.detail}</dd>
+          </div>
+        ))}
+      </dl>
 
       <div
         className="mt-14 animate-fade-in-up"

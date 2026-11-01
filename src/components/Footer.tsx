@@ -6,8 +6,7 @@ export default function Footer() {
       <div className="mx-auto max-w-5xl px-6 py-12">
         <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">Let&apos;s connect</h2>
         <p className="mt-2 max-w-xl text-muted">
-          Open to full-stack roles and interesting freelance projects. Reach out via email or
-          LinkedIn.
+          {profile.availability}. {profile.workPreferences} Reach out via email or LinkedIn.
         </p>
 
         <div className="mt-6 flex flex-wrap gap-x-8 gap-y-2 text-sm">

@@ -6,7 +6,7 @@ export default function Experience() {
     <section id="experience" className="mx-auto max-w-5xl px-6 py-16">
       <Reveal>
         <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">Experience</h2>
-        <p className="mt-2 text-muted">A timeline of roles across web development.</p>
+        <p className="mt-2 text-muted">Enterprise applications, production support and full-stack product delivery.</p>
       </Reveal>
 
       <ol className="mt-10 space-y-10 border-l border-border pl-8">
@@ -24,6 +24,15 @@ export default function Experience() {
                 <span className="mt-1 inline-block rounded-full bg-surface-muted px-2.5 py-0.5 text-xs font-medium text-muted">
                   {entry.type}
                 </span>
+              )}
+              {entry.links && (
+                <div className="mt-3 flex flex-wrap gap-4">
+                  {entry.links.map((link) => (
+                    <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-accent underline underline-offset-4 hover:text-accent-strong">
+                      {link.label}<span className="sr-only"> (opens in a new tab)</span>
+                    </a>
+                  ))}
+                </div>
               )}
               <ul className="mt-3 space-y-1.5 text-sm leading-relaxed text-muted">
                 {entry.bullets.map((bullet) => (

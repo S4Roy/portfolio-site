@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 const title = "Subhankar Roy | Full Stack Developer";
 const description =
-  "Portfolio of Subhankar Roy, a Full Stack Developer with 5+ years of experience across Angular, React, Next.js, Node.js, and MongoDB — building scalable ERP, logistics, eCommerce, and healthcare solutions.";
+  "Subhankar Roy — Full Stack Developer with 4+ years of full-time experience and 6+ years including contracts. Angular, TypeScript, Node.js and MongoDB; enterprise applications, e-commerce and mobile. Immediate joiner based in Kolkata.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
