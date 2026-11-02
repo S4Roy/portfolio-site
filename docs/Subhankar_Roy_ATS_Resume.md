@@ -5,14 +5,14 @@ Kolkata, West Bengal, India | +91 89067 87168 | subhankarroylive@gmail.com
 LinkedIn: https://www.linkedin.com/in/s4roy/ | Portfolio: https://subhankar.baseweb.in
 
 ## PROFESSIONAL SUMMARY
-Full Stack Developer with **4+ years of full-time experience** and earlier part-time contracts in enterprise applications, e-commerce and healthcare. Specializes in Angular, TypeScript, Node.js, Express.js and MongoDB. Experience includes travel workflows for **2,500+ employees**, procurement for **200+ users**, and commerce handling **600+ monthly orders** and **INR 400,000+ in monthly sales**. Achieved a **93.75%** reduction in document loading time; experienced in SAP integrations, AWS deployment and production support.
+Full Stack Developer with **4+ years of full-time experience** and earlier part-time contracts in enterprise applications, e-commerce and healthcare. Specializes in Angular, TypeScript, Node.js, Express.js and MongoDB. Built enterprise workflows for **2,500+ employees** and procurement for **200+ users**; freelance commerce work includes ELEXIFY, handling **600+ monthly orders** and **INR 400,000+ in monthly sales**. Achieved a **93.75%** reduction in document loading time; experienced in SAP integrations, AWS deployment and production support.
 
 ## TECHNICAL SKILLS
 - **Languages:** TypeScript, JavaScript (ES6+), HTML5, CSS3
 - **Frontend and Mobile:** Angular, RxJS, NgRx, React, Next.js, React Native, Expo, Tailwind CSS
-- **Backend and Databases:** Node.js, Express.js, REST APIs, MongoDB, Mongoose, PostgreSQL, Firebase, Electron.js
+- **Backend and Databases:** Node.js, Express.js, REST API Design, MongoDB, Mongoose, PostgreSQL, Firebase, Electron.js
 - **Security and Integrations:** Single Sign-On (SSO), Role-Based Access Control (RBAC), OTP and Google authentication, SAP, TenderTiger, Razorpay, PayPal, Shiprocket, Zoho Books, eMudra
-- **Cloud and DevOps:** AWS (EC2, S3, CloudFront), Docker, Linux, Shell Scripting, GitHub Actions, CI/CD, Apache, PM2, SSL/TLS, Git
+- **Cloud and DevOps:** AWS (EC2, S3, CloudFront), Docker, Linux CLI (Command Line), Shell Scripting, GitHub Actions, CI/CD, Apache, PM2, SSL/TLS, Git
 - **Testing and Delivery:** Vitest, Supertest, Playwright, Jest, Unit Testing, API Testing, Debugging, Agile/Scrum, Code Reviews
 - **AI-Assisted Development:** Claude Code, OpenAI Codex
 
@@ -49,16 +49,16 @@ Jul 2024 - Present | Freelance, part-time | Next.js, Angular, Node.js, MongoDB, 
 Website: https://elexify.online/
 Android app: https://play.google.com/store/apps/details?id=com.elexify
 - Shipped a storefront, admin panel and REST API handling **600+ monthly orders** and supporting **INR 400,000+ in monthly sales**; released a React Native/Expo Android app on Google Play.
-- Coordinated MongoDB transactions, atomic stock updates and reservation lifecycles with idempotent checkout and payment finalization for concurrent orders and repeated callbacks.
-- Connected Razorpay payments, partial cash on delivery (COD), returns/refunds, Shiprocket, GST invoicing and Zoho Books; enforced RBAC with **approximately 170 permissions** and audit logging.
-- Authored Vitest/Supertest API and integration tests for checkout concurrency, stock and payment reconciliation; covered checkout/returns with Playwright and mobile features with Jest.
-- Automated cart recovery and notifications; deployed on AWS EC2 with PM2, Apache and SSL. Configured S3 storage, CloudFront delivery, analytics and GitHub Actions build/test workflows.
+- Designed checkout with MongoDB transactions, atomic stock updates and inventory reservations; used idempotent payment finalization to handle concurrent orders and repeated callbacks.
+- Connected Razorpay, partial cash on delivery (COD), refunds, Shiprocket and GST/Zoho Books invoicing; enforced **approximately 170 RBAC permissions** with audit logging.
+- Tested checkout concurrency, inventory and payment reconciliation with Vitest/Supertest; covered checkout/returns with Playwright and mobile features with Jest.
+- Automated cart recovery and notifications; deployed on AWS EC2 with PM2, Apache and SSL, plus S3/CloudFront delivery and GitHub Actions build/test workflows.
 
 ### Rudraksha Valley | Customizable E-commerce Platform
 Freelance, part-time | Next.js, Angular, Node.js, Express.js, MongoDB, AWS S3
 Website: https://rudrakshavalley.com/
-- Extended the storefront and admin panel with catalog, product variants, inventory, orders and CMS workflows backed by Express.js APIs and MongoDB.
-- Created a mala builder with bead selection, quantity validation and calculated pricing; enabled multiple currencies through GeoIP detection and exchange-rate conversion.
+- Built catalog, variants, inventory, orders and CMS workflows across the storefront and admin panel using Express.js APIs and MongoDB.
+- Created a mala builder with bead selection, quantity validation and pricing; enabled multiple currencies using GeoIP and exchange-rate conversion.
 - Unified checkout across 2 payment gateways (Razorpay and PayPal); automated Shiprocket shipment updates and preserved guest carts/wishlists after OTP authentication.
 - Published Google Merchant Center feeds, sitemaps and structured data; configured GA4 e-commerce events, S3 image optimization, Vitest/Supertest tests and GitHub Actions CI.
 
@@ -73,4 +73,4 @@ B.Tech, Information Technology | Kalyani Government Engineering College | 2019 -
 Diploma, Electronics and Telecommunication Engineering | Contai Polytechnic | 2016 - 2019 | CGPA: 8.0
 
 ## AVAILABILITY
-Available to join immediately. Open to remote and hybrid roles in Kolkata, Bengaluru, Hyderabad, Pune and NCR.
+Available to join immediately. Open to remote and hybrid roles in Kolkata, Bengaluru, Hyderabad, Pune and Noida.

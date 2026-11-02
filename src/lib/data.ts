@@ -9,7 +9,7 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/s4roy/",
   github: "https://github.com/S4Roy/",
   availability: "Immediate joiner",
-  workPreferences: "Open to remote roles and hybrid roles in Kolkata, Bengaluru, Hyderabad, Pune and NCR.",
+  workPreferences: "Open to remote roles and hybrid roles in Kolkata, Bengaluru, Hyderabad, Pune and Noida.",
   summary:
     "Full Stack Developer specializing in Angular, TypeScript, Node.js, Express.js and MongoDB. Built enterprise procurement, travel, document-management and e-commerce systems, including SFTravelDesk for 2,500+ employees across 5 group companies. Integrated SAP and TenderTiger workflows, improved document load time by 93.75%, and delivered production commerce platforms across web and mobile.",
 };
