@@ -14,7 +14,8 @@ Senior Full Stack Developer with **4+ years of full-time experience** plus earli
 - **Security and Integrations:** Single Sign-On (SSO), Role-Based Access Control (RBAC), OTP and Google authentication, SAP, TenderTiger, Razorpay, PayPal, Shiprocket, Zoho Books, eMudra
 - **Cloud and DevOps:** AWS (EC2, S3, CloudFront), Docker, Linux CLI, Shell Scripting, GitHub Actions, CI/CD, Apache, PM2, SSL/TLS, Git
 - **Testing and Delivery:** Vitest, Supertest, Playwright, Jest, Unit Testing, API Testing, Debugging, Agile/Scrum, Code Reviews
-- **AI-Assisted Development:** Claude Code, OpenAI Codex
+- **AI Development Tools:** Claude Code, OpenAI Codex
+- **AI Familiarity (Foundational):** LLMs, Retrieval-Augmented Generation (RAG), Amazon Bedrock
 
 ## PROFESSIONAL EXPERIENCE
 ### MEAN Stack Developer | Shyam Future Tech Pvt. Ltd / Shyam Steel Industries Ltd | Kolkata
@@ -43,7 +44,7 @@ Jan 2020 - Dec 2020 | Part-time contract
 - Cut report preparation time from **10-15 minutes to 2-3 minutes** through automated audiogram plotting, pure-tone average calculations and report recommendations.
 
 ## FREELANCE PROJECTS
-Selected part-time freelance engagements. Actively use **Claude Code** and **OpenAI Codex** to accelerate implementation and reduce development time.
+Part-time freelance engagements; use **Claude Code** and **OpenAI Codex** to accelerate development.
 ### ELEXIFY | Multichannel E-commerce Platform
 Jul 2024 - Present | Freelance, part-time | Next.js, Angular, Node.js, MongoDB, React Native, Expo, AWS
 Website: https://elexify.online/
