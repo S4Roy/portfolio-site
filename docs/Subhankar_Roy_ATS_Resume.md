@@ -5,14 +5,14 @@ Kolkata, West Bengal, India | +91 89067 87168 | subhankarroylive@gmail.com
 LinkedIn: https://www.linkedin.com/in/s4roy/ | Portfolio: https://subhankar.baseweb.in
 
 ## PROFESSIONAL SUMMARY
-Full Stack Developer with **4+ years of full-time experience** plus earlier part-time contracts. Designs Angular applications, Node.js REST APIs and MongoDB workflows. Built enterprise solutions for **2,500+ employees** and procurement for **200+ users**. Freelance ELEXIFY platform handles **600+ monthly orders** and **INR 400,000+ monthly sales**. Reduced document loading time by **93.75%**; experienced in concurrent checkout, idempotent payments, SAP integrations and AWS deployment.
+Senior Full Stack Developer with **4+ years of full-time experience** plus earlier part-time contracts. Specializes in Angular, TypeScript, Node.js and MongoDB. Built enterprise workflows for **2,500+ employees** and procurement for **200+ users**. Freelance ELEXIFY platform handles **600+ monthly orders** and **INR 400,000+ monthly sales**. Reduced document loading time by **93.75%**; experienced in RESTful API design, concurrent checkout, idempotent payments, SAP integrations and AWS deployment.
 
 ## TECHNICAL SKILLS
 - **Languages:** TypeScript, JavaScript (ES6+), HTML5, CSS3
-- **Frontend and Mobile:** Angular, RxJS, NgRx, React, Next.js, React Native, Expo, Tailwind CSS
-- **Backend and Databases:** Node.js, Express.js, REST API Design, MongoDB, Mongoose, PostgreSQL, Firebase, Electron.js
+- **Frontend and Apps:** Angular, RxJS, NgRx, React, Next.js, React Native, Expo, Electron.js, Tailwind CSS
+- **Backend and Databases:** Node.js, Express.js, RESTful API Design, MongoDB, Mongoose, PostgreSQL, Firebase
 - **Security and Integrations:** Single Sign-On (SSO), Role-Based Access Control (RBAC), OTP and Google authentication, SAP, TenderTiger, Razorpay, PayPal, Shiprocket, Zoho Books, eMudra
-- **Cloud and DevOps:** AWS (EC2, S3, CloudFront), Docker, Linux CLI (Command Line), Shell Scripting, GitHub Actions, CI/CD, Apache, PM2, SSL/TLS, Git
+- **Cloud and DevOps:** AWS (EC2, S3, CloudFront), Docker, Linux CLI, Shell Scripting, GitHub Actions, CI/CD, Apache, PM2, SSL/TLS, Git
 - **Testing and Delivery:** Vitest, Supertest, Playwright, Jest, Unit Testing, API Testing, Debugging, Agile/Scrum, Code Reviews
 - **AI-Assisted Development:** Claude Code, OpenAI Codex
 
@@ -20,7 +20,7 @@ Full Stack Developer with **4+ years of full-time experience** plus earlier part
 ### MEAN Stack Developer | Shyam Future Tech Pvt. Ltd / Shyam Steel Industries Ltd | Kolkata
 Mar 2024 - Oct 2026
 Joined Shyam Future Tech Pvt. Ltd on 7 Mar 2024; transitioned to Shyam Steel Industries Ltd on 31 Oct 2025, continuing with the same product responsibilities through 31 Oct 2026.
-- Architected **[SFTNirman](https://sftnirman.com/)** for **200+ users** across **8 procurement workflows**; connected SAP and TenderTiger and created BIM/3D CAD design reviews with Node.js APIs.
+- Architected **[SFTNirman](https://sftnirman.com/)** procurement workflows for **200+ users** across **8 processes**; integrated SAP and TenderTiger and built Node.js APIs for BIM/3D CAD design reviews.
 - Reduced document loading time in **SFTDox** by **93.75%**, from **8 minutes to 30 seconds**; added dashboards, annotations and collaboration features.
 - Launched SAP-integrated **[SFTravelDesk](https://sftraveldesk.com/)** for **2,500+ employees** across **5 group companies**, covering travel approvals, expenses, advances, reimbursements and company-level reporting.
 - Established **SFTVault** asset management in Next.js and **SFTWarehouse**, an Angular SSO platform; embedded a React AI-chatbot frontend into Angular-based **SFT Evolve HRMS**.
@@ -49,7 +49,7 @@ Jul 2024 - Present | Freelance, part-time | Next.js, Angular, Node.js, MongoDB, 
 Website: https://elexify.online/
 Android app: https://play.google.com/store/apps/details?id=com.elexify
 - Shipped a storefront, admin panel and REST API handling **600+ monthly orders** and supporting **INR 400,000+ in monthly sales**; released a React Native/Expo Android app on Google Play.
-- Designed **concurrent checkout** with MongoDB transactions, atomic stock updates and inventory reservations; applied **idempotent payment processing** to handle repeated callbacks.
+- Engineered **concurrent checkout** using MongoDB transactions, atomic stock updates and inventory reservations, with **idempotent payment processing** to handle repeated callbacks.
 - Connected Razorpay, partial cash on delivery (COD), refunds, Shiprocket and GST/Zoho Books invoicing; enforced **approximately 170 RBAC permissions** with audit logging.
 - Tested checkout concurrency, inventory and payment reconciliation with Vitest/Supertest; covered checkout/returns with Playwright and mobile features with Jest.
 - Automated cart recovery and notifications; deployed on AWS EC2 with PM2, Apache and SSL, plus S3/CloudFront delivery and GitHub Actions build/test workflows.
@@ -59,11 +59,11 @@ Freelance, part-time | Next.js, Angular, Node.js, Express.js, MongoDB, AWS S3
 Website: https://rudrakshavalley.com/
 - Built catalog, variants, inventory, orders and CMS workflows across the storefront and admin panel using Express.js APIs and MongoDB.
 - Created a mala builder with bead selection, quantity validation and pricing; enabled multiple currencies using GeoIP and exchange-rate conversion.
-- Unified checkout across 2 payment gateways (Razorpay and PayPal); automated Shiprocket shipment updates and preserved guest carts/wishlists after OTP authentication.
+- Integrated Razorpay and PayPal into a unified checkout; automated Shiprocket shipment updates and preserved guest carts and wishlists after OTP authentication.
 - Published Google Merchant Center feeds, sitemaps and structured data; configured GA4 e-commerce events, S3 image optimization, Vitest/Supertest tests and GitHub Actions CI.
 
-## CURRENT PLATFORM SCALE
-Logistics and audiometry systems from earlier employment; Nov 2026 dashboard totals extend beyond those roles.
+## HISTORICAL PROJECTS - CURRENT USAGE
+Nov 2026 dashboard totals include usage after the original employment engagements.
 - **[Seabrin LMS](https://lms.seabrin.in/)**: **5,716 trips**, **30,538 fixed-trip records** and **355 vendors**.
 - **[Healthy Hearing](https://hh.baseweb.in/)**: **7,766 patient records** across **2 centers** with **5 audiologists**.
 
