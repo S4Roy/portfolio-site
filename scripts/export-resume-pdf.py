@@ -73,13 +73,13 @@ for line in SOURCE.read_text().splitlines():
     elif line.startswith('- '):
         key, text = 'bullet', '• ' + line[2:]
     else:
-        key = 'meta' if previous_role or line.startswith(('Employer transition:', 'Website:', 'Android app:', 'LinkedIn:', 'Kolkata,', 'Full Stack Developer |')) else 'body'
+        key = 'meta' if previous_role or line.startswith(('Employer transition:', 'Website:', 'Android app:', 'LinkedIn:', 'Kolkata,', 'Full Stack Developer |', 'Senior Full Stack Developer |')) else 'body'
         text = line
     story.append(Paragraph(linked(text), styles[key]))
     previous_role = key == 'role'
 
 OUTPUT.parent.mkdir(exist_ok=True)
-doc = SimpleDocTemplate(str(OUTPUT), pagesize=A4, rightMargin=40, leftMargin=40, topMargin=32, bottomMargin=32, title='Subhankar Roy - Full Stack Developer - MEAN Stack', author='Subhankar Roy')
+doc = SimpleDocTemplate(str(OUTPUT), pagesize=A4, rightMargin=40, leftMargin=40, topMargin=32, bottomMargin=32, title='Subhankar Roy - Senior Full Stack Developer - Angular and Node.js', author='Subhankar Roy')
 doc.build(story)
 shutil.copyfile(OUTPUT, ROOT / 'public/Subhankar_Roy_Full_Stack_Developer_Resume.pdf')
 print(f'Updated {OUTPUT} and public download.')

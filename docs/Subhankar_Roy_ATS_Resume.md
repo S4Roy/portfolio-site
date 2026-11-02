@@ -1,11 +1,11 @@
 # SUBHANKAR ROY
-Full Stack Developer | MEAN Stack | Angular | Node.js | TypeScript
+Senior Full Stack Developer | Angular | Node.js | TypeScript | MongoDB
 
 Kolkata, West Bengal, India | +91 89067 87168 | subhankarroylive@gmail.com
 LinkedIn: https://www.linkedin.com/in/s4roy/ | Portfolio: https://subhankar.baseweb.in
 
 ## PROFESSIONAL SUMMARY
-Full Stack Developer with **4+ years of full-time experience** and earlier part-time contracts in enterprise applications, e-commerce and healthcare. Specializes in Angular, TypeScript, Node.js, Express.js and MongoDB. Built enterprise workflows for **2,500+ employees** and procurement for **200+ users**; freelance commerce work includes ELEXIFY, handling **600+ monthly orders** and **INR 400,000+ in monthly sales**. Achieved a **93.75%** reduction in document loading time; experienced in SAP integrations, AWS deployment and production support.
+Full Stack Developer with **4+ years of full-time experience** plus earlier part-time contracts. Designs Angular applications, Node.js REST APIs and MongoDB workflows. Built enterprise solutions for **2,500+ employees** and procurement for **200+ users**. Freelance ELEXIFY platform handles **600+ monthly orders** and **INR 400,000+ monthly sales**. Reduced document loading time by **93.75%**; experienced in concurrent checkout, idempotent payments, SAP integrations and AWS deployment.
 
 ## TECHNICAL SKILLS
 - **Languages:** TypeScript, JavaScript (ES6+), HTML5, CSS3
@@ -49,7 +49,7 @@ Jul 2024 - Present | Freelance, part-time | Next.js, Angular, Node.js, MongoDB, 
 Website: https://elexify.online/
 Android app: https://play.google.com/store/apps/details?id=com.elexify
 - Shipped a storefront, admin panel and REST API handling **600+ monthly orders** and supporting **INR 400,000+ in monthly sales**; released a React Native/Expo Android app on Google Play.
-- Designed checkout with MongoDB transactions, atomic stock updates and inventory reservations; used idempotent payment finalization to handle concurrent orders and repeated callbacks.
+- Designed **concurrent checkout** with MongoDB transactions, atomic stock updates and inventory reservations; applied **idempotent payment processing** to handle repeated callbacks.
 - Connected Razorpay, partial cash on delivery (COD), refunds, Shiprocket and GST/Zoho Books invoicing; enforced **approximately 170 RBAC permissions** with audit logging.
 - Tested checkout concurrency, inventory and payment reconciliation with Vitest/Supertest; covered checkout/returns with Playwright and mobile features with Jest.
 - Automated cart recovery and notifications; deployed on AWS EC2 with PM2, Apache and SSL, plus S3/CloudFront delivery and GitHub Actions build/test workflows.
