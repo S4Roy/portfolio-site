@@ -2,7 +2,7 @@
 // Every figure here is taken from the ATS resume (docs/Subhankar_Roy_ATS_Resume.md)
 // and the evidence log (docs/Resume_Project_Evidence.md). Do not add unverified numbers.
 
-export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://subhankar.baseweb.in").replace(/\/$/, "");
+export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://subhankarroy.in").replace(/\/$/, "");
 
 export const resumePath = "/Subhankar_Roy_Full_Stack_Developer_Resume.pdf";
 

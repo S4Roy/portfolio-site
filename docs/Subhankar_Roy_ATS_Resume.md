@@ -2,7 +2,7 @@
 Senior Full Stack Developer | Node.js | TypeScript | React | Next.js | Angular | MongoDB
 
 Kolkata, West Bengal, India | +91 89067 87168 | subhankarroylive@gmail.com
-LinkedIn: https://www.linkedin.com/in/s4roy/ | Portfolio: https://subhankar.baseweb.in
+LinkedIn: https://www.linkedin.com/in/s4roy/ | Portfolio: https://subhankarroy.in
 
 ## PROFESSIONAL SUMMARY
 Senior Full Stack Developer with **4+ years of full-time experience** building enterprise workflows and production commerce platforms with Node.js, TypeScript, React, Next.js, Angular and MongoDB. Delivered SAP-integrated systems for **2,500+ employees** and procurement for **200+ users**, reduced document loading time by **93.75%**, and built a commerce platform processing **600+ monthly orders** and **INR 400,000+ monthly sales**. Strong in RESTful API design, transactional data consistency, idempotent payments, RBAC and AWS deployment. **Available to join immediately.**

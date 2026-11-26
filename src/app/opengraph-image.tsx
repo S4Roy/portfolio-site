@@ -20,7 +20,7 @@ export default function OpengraphImage() {
         </div>
         <div style={{ display: "flex", justifyContent: "space-between", fontSize: 26, color: "#a0abbd" }}>
           <span>4+ years · Kolkata, India</span>
-          <span>subhankar.baseweb.in</span>
+          <span>subhankarroy.in</span>
         </div>
       </div>
     ),
