@@ -1,37 +1,157 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import { resumePath } from "@/lib/data";
+import { Close, Download, Menu, Moon, Sun } from "@/components/icons";
+
 const links = [
-  { href: "#about", label: "About" },
-  { href: "#experience", label: "Experience" },
-  { href: "#projects", label: "Projects" },
-  { href: "#skills", label: "Skills" },
-  { href: "#contact", label: "Contact" },
+  { id: "home", label: "Home" },
+  { id: "projects", label: "Projects" },
+  { id: "skills", label: "Skills" },
+  { id: "experience", label: "Experience" },
+  { id: "about", label: "About" },
+  { id: "contact", label: "Contact" },
 ];
 
-export default function Nav() {
+function ThemeToggle() {
+  const toggle = () => {
+    const dark = !document.documentElement.classList.contains("dark");
+    document.documentElement.classList.toggle("dark", dark);
+    try {
+      localStorage.setItem("theme", dark ? "dark" : "light");
+    } catch {}
+  };
   return (
-    <header className="sticky top-0 z-50 border-b border-border/80 bg-background/80 backdrop-blur">
-      <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-        <a href="#top" className="text-sm font-semibold tracking-tight">
+    <button
+      type="button"
+      onClick={toggle}
+      aria-label="Toggle colour theme"
+      className="grid h-9 w-9 place-items-center rounded-lg border border-border text-muted transition-colors hover:text-foreground"
+    >
+      <Sun className="hidden dark:block" />
+      <Moon className="dark:hidden" />
+    </button>
+  );
+}
+
+export default function Nav({ home = true }: { home?: boolean }) {
+  const [active, setActive] = useState("home");
+  const [open, setOpen] = useState(false);
+  const menuButton = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!home) return;
+    const sections = links.map((l) => document.getElementById(l.id)).filter(Boolean) as HTMLElement[];
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) if (e.isIntersecting) setActive(e.target.id);
+      },
+      { rootMargin: "-45% 0px -50% 0px" },
+    );
+    sections.forEach((s) => observer.observe(s));
+    return () => observer.disconnect();
+  }, [home]);
+
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setOpen(false);
+        menuButton.current?.focus();
+      }
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [open]);
+
+  const href = (id: string) => (home ? `#${id}` : `/#${id}`);
+
+  return (
+    <header className="sticky top-0 z-50 border-b border-border bg-background/85 backdrop-blur-md">
+      <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-4 px-5 sm:px-8">
+        <a href={href("home")} className="text-sm font-semibold tracking-tight">
           Subhankar Roy
         </a>
-        <nav className="hidden gap-6 text-sm text-muted sm:flex">
-          {links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="transition-colors hover:text-accent-strong"
-            >
-              {link.label}
-            </a>
-          ))}
+
+        <nav aria-label="Primary" className="hidden lg:block">
+          <ul className="flex items-center gap-1 text-sm">
+            {links.map((l) => {
+              const isActive = home && active === l.id;
+              return (
+                <li key={l.id}>
+                  <a
+                    href={href(l.id)}
+                    aria-current={isActive ? "location" : undefined}
+                    className={`rounded-md px-3 py-1.5 transition-colors ${
+                      isActive ? "bg-accent-soft text-accent" : "text-muted hover:text-foreground"
+                    }`}
+                  >
+                    {l.label}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
         </nav>
-        <a
-          href="/Subhankar_Roy_Full_Stack_Developer_Resume.pdf"
-          download
-          className="rounded-full border border-border px-4 py-1.5 text-sm font-medium transition-colors hover:border-accent hover:text-accent-strong"
-        >
-          Resume
-        </a>
+
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          <a
+            href={resumePath}
+            download
+            data-track="resume_download"
+            className="hidden h-9 items-center gap-1.5 rounded-lg border border-border px-3 text-sm font-medium transition-colors hover:border-accent hover:text-accent sm:inline-flex"
+          >
+            <Download /> Resume
+          </a>
+          <a
+            href={href("contact")}
+            data-track="hire_me_click"
+            className="hidden h-9 items-center rounded-lg bg-accent px-3.5 text-sm font-semibold text-white transition-colors hover:bg-accent-strong dark:text-[#0a0f1a] sm:inline-flex"
+          >
+            Hire me
+          </a>
+          <button
+            ref={menuButton}
+            type="button"
+            className="grid h-9 w-9 place-items-center rounded-lg border border-border lg:hidden"
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            aria-label={open ? "Close menu" : "Open menu"}
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? <Close /> : <Menu />}
+          </button>
+        </div>
       </div>
+
+      {open && (
+        <nav id="mobile-menu" aria-label="Mobile" className="border-t border-border bg-background lg:hidden">
+          <ul className="mx-auto flex max-w-6xl flex-col px-5 py-3 sm:px-8">
+            {links.map((l) => (
+              <li key={l.id}>
+                <a
+                  href={href(l.id)}
+                  onClick={() => setOpen(false)}
+                  className={`block rounded-md px-3 py-2.5 text-base ${
+                    home && active === l.id ? "bg-accent-soft text-accent" : "text-foreground"
+                  }`}
+                >
+                  {l.label}
+                </a>
+              </li>
+            ))}
+            <li className="mt-2 grid grid-cols-2 gap-2 sm:hidden">
+              <a href={resumePath} download data-track="resume_download" className="flex h-11 items-center justify-center gap-1.5 rounded-lg border border-border text-sm font-medium">
+                <Download /> Resume
+              </a>
+              <a href={href("contact")} onClick={() => setOpen(false)} data-track="hire_me_click" className="flex h-11 items-center justify-center rounded-lg bg-accent text-sm font-semibold text-white dark:text-[#0a0f1a]">
+                Hire me
+              </a>
+            </li>
+          </ul>
+        </nav>
+      )}
     </header>
   );
 }

@@ -1,51 +1,66 @@
-import { experience } from "@/lib/data";
-import Reveal from "@/components/Reveal";
+import { experienceGroups } from "@/lib/data";
+import { ExternalLink, Section } from "@/components/ui";
+import { Chevron } from "@/components/icons";
 
 export default function Experience() {
   return (
-    <section id="experience" className="mx-auto max-w-5xl px-6 py-16">
-      <Reveal>
-        <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">Experience</h2>
-        <p className="mt-2 text-muted">Enterprise applications, production support and full-stack product delivery.</p>
-      </Reveal>
-
-      <ol className="mt-10 space-y-10 border-l border-border pl-8">
-        {experience.map((entry, i) => (
-          <Reveal key={`${entry.company}-${entry.period}`} delay={i * 60}>
-            <li className="relative list-none">
-              <span className="absolute -left-9.25 top-1.5 h-2.5 w-2.5 rounded-full bg-accent" />
-              <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                <h3 className="text-lg font-semibold">
-                  {entry.role} <span className="text-muted">— {entry.company}</span>
-                </h3>
-                <span className="text-sm font-medium text-muted">{entry.period}</span>
-              </div>
-              {entry.type && (
-                <span className="mt-1 inline-block rounded-full bg-surface-muted px-2.5 py-0.5 text-xs font-medium text-muted">
-                  {entry.type}
-                </span>
-              )}
-              {entry.links && (
-                <div className="mt-3 flex flex-wrap gap-4">
-                  {entry.links.map((link) => (
-                    <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-accent underline underline-offset-4 hover:text-accent-strong">
-                      {link.label}<span className="sr-only"> (opens in a new tab)</span>
-                    </a>
-                  ))}
-                </div>
-              )}
-              <ul className="mt-3 space-y-1.5 text-sm leading-relaxed text-muted">
-                {entry.bullets.map((bullet) => (
-                  <li key={bullet} className="flex gap-2">
-                    <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-muted" />
-                    <span>{bullet}</span>
-                  </li>
-                ))}
-              </ul>
-            </li>
-          </Reveal>
+    <Section id="experience" eyebrow="Professional experience" title="Where I've worked" intro="Full-time roles, earlier contracts and client projects.">
+      <div className="space-y-12">
+        {experienceGroups.map((group) => (
+          <div key={group.title}>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-muted">{group.title}</h3>
+            <ol className="mt-5 space-y-4 border-l border-border pl-5 sm:pl-7">
+              {group.entries.map((e) => (
+                <li key={e.company + e.period} className="relative">
+                  <span aria-hidden="true" className="absolute -left-[25px] top-6 h-2.5 w-2.5 rounded-full border-2 border-background bg-accent sm:-left-[33px]" />
+                  <article className="rounded-xl border border-border bg-surface p-5 shadow-card sm:p-6">
+                    <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                      <h4 className="text-lg font-semibold">{e.role}</h4>
+                      <p className="text-sm font-medium text-muted">
+                        <time>{e.period}</time>
+                      </p>
+                    </div>
+                    <p className="text-sm text-muted">{e.company}{e.location ? ` · ${e.location}` : ""}</p>
+                    <ul className="mt-4 space-y-2 text-sm leading-relaxed">
+                      {e.highlights.map((h) => (
+                        <li key={h} className="flex gap-2.5">
+                          <span aria-hidden="true" className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent" />
+                          <span>{h}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <details className="mt-4 border-t border-border pt-3">
+                      <summary className="inline-flex items-center gap-1 rounded text-sm font-medium text-accent">
+                        More details <Chevron className="chevron transition-transform" />
+                      </summary>
+                      {e.note && <p className="mt-3 text-sm text-muted">{e.note}</p>}
+                      <ul className="mt-3 space-y-1.5 text-sm leading-relaxed text-muted">
+                        {e.details.map((d) => (
+                          <li key={d} className="flex gap-2.5">
+                            <span aria-hidden="true" className="mt-2 h-1 w-1 shrink-0 rounded-full bg-muted" />
+                            <span>{d}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      {e.links && (
+                        <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-1.5 text-sm">
+                          {e.links.map((l) => (
+                            <li key={l.href}>
+                              <ExternalLink href={l.href} track="project_visit" className="text-accent underline underline-offset-4 hover:text-accent-strong">
+                                {l.label}
+                              </ExternalLink>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </details>
+                  </article>
+                </li>
+              ))}
+            </ol>
+          </div>
         ))}
-      </ol>
-    </section>
+      </div>
+    </Section>
   );
 }

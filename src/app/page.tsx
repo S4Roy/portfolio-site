@@ -1,21 +1,29 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
-import Experience from "@/components/Experience";
+import Impact from "@/components/Impact";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
+import Experience from "@/components/Experience";
+import AIEngineering from "@/components/AIEngineering";
+import About from "@/components/About";
+import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div id="top" className="flex min-h-full flex-col">
+    <>
       <Nav />
-      <main className="flex-1">
+      <main id="main" className="flex-1">
         <Hero />
-        <Experience />
+        <Impact />
         <Projects />
         <Skills />
+        <Experience />
+        <AIEngineering />
+        <About />
+        <Contact />
       </main>
       <Footer />
-    </div>
+    </>
   );
 }

@@ -1,112 +1,60 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { profile } from "@/lib/data";
+import { profile, siteUrl } from "@/lib/data";
+import { JsonLd, seo, siteJsonLd } from "@/lib/seo";
+import Analytics from "@/components/Analytics";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
-const title = "Subhankar Roy | Full Stack Developer";
-const description =
-  "Subhankar Roy — Full Stack Developer with 4+ years of full-time experience and 6+ years including contracts. Angular, TypeScript, Node.js and MongoDB; enterprise applications, e-commerce and mobile. Immediate joiner based in Kolkata.";
+const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"], display: "swap" });
+const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"], display: "swap", preload: false });
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: {
-    default: title,
-    template: "%s | Subhankar Roy",
-  },
-  description,
-  keywords: [
-    "Subhankar Roy",
-    "Full Stack Developer",
-    "Angular Developer",
-    "Node.js Developer",
-    "MEAN Stack Developer",
-    "React Developer",
-    "Next.js Developer",
-    "MongoDB",
-    "TypeScript",
-    "West Bengal Developer",
-    "India Full Stack Developer",
-  ],
+  title: { default: seo.title, template: "%s | Subhankar Roy" },
+  description: seo.description,
+  keywords: seo.keywords,
   authors: [{ name: profile.name, url: siteUrl }],
   creator: profile.name,
-  applicationName: "Subhankar Roy Portfolio",
-  robots: { index: true, follow: true },
-  alternates: { canonical: siteUrl },
+  applicationName: `${profile.name} Portfolio`,
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large" } },
+  alternates: { canonical: "/" },
   openGraph: {
     type: "profile",
-    url: siteUrl,
-    siteName: `${profile.name} — Portfolio`,
-    title,
-    description,
-    locale: "en_US",
-    images: [
-      {
-        url: "/icon.png",
-        width: 512,
-        height: 512,
-        alt: `${profile.name} — Full Stack Developer`,
-      },
-    ],
+    url: "/",
+    siteName: `${profile.name} Portfolio`,
+    title: seo.title,
+    description: seo.description,
+    locale: "en_IN",
+    firstName: "Subhankar",
+    lastName: "Roy",
   },
-  twitter: {
-    card: "summary",
-    title,
-    description,
-    images: ["/icon.png"],
-  },
+  twitter: { card: "summary_large_image", title: seo.title, description: seo.description },
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    name: profile.name,
-    jobTitle: profile.title,
-    url: siteUrl,
-    email: `mailto:${profile.email}`,
-    address: {
-      "@type": "PostalAddress",
-      addressRegion: "West Bengal",
-      addressCountry: "IN",
-    },
-    sameAs: [profile.linkedin, profile.github],
-    knowsAbout: [
-      "Angular",
-      "React",
-      "Next.js",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "PostgreSQL",
-      "TypeScript",
-      "REST APIs",
-      "Microservices",
-    ],
-  };
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f7f9fc" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a0f1a" },
+  ],
+};
 
+// Runs before paint to apply the saved/system theme and avoid a flash.
+const themeScript = `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')}catch(e){}})()`;
+
+export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
+    <html lang="en" suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <JsonLd data={siteJsonLd()} />
       </head>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="flex min-h-screen flex-col">
+        <a href="#main" className="sr-only z-[60] rounded-md bg-accent px-4 py-2 text-white focus:not-sr-only focus:fixed focus:left-4 focus:top-4">
+          Skip to content
+        </a>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }

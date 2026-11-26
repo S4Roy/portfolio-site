@@ -1,110 +1,66 @@
 import Image from "next/image";
-import { profile, coreStack, highlights } from "@/lib/data";
+import { profile, resumePath } from "@/lib/data";
+import { Container, ExternalLink, buttonStyles } from "@/components/ui";
+import { ArrowRight, Download, LinkedIn, MapPin } from "@/components/icons";
 
 export default function Hero() {
   return (
-    <section
-      id="about"
-      className="mx-auto max-w-5xl px-6 pb-16 pt-16 sm:pt-24"
-    >
-      <div className="flex flex-col-reverse items-center gap-10 md:flex-row md:items-center md:justify-between">
-        <div className="max-w-2xl animate-fade-in-up">
-          <p className="text-sm font-medium text-accent">
-            Hi, I&apos;m {profile.name.split(" ")[0]} 👋
-          </p>
-          <h1 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
-            {profile.name}
-          </h1>
-          <p className="mt-3 text-lg text-muted sm:text-xl">
-            {profile.title} &middot; {profile.tagline}
-          </p>
-          <p className="mt-4 text-sm text-muted">{profile.location}</p>
-          <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1 text-xs font-medium text-accent">
-            <span className="h-2 w-2 rounded-full bg-emerald-500" aria-hidden="true" />
+    <section id="home" aria-labelledby="hero-title" className="border-b border-border pb-16 pt-12 sm:pb-24 sm:pt-20">
+      <Container className="grid items-center gap-12 md:grid-cols-[1fr_auto]">
+        <div className="max-w-2xl">
+          <p className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1 text-xs font-medium text-foreground shadow-card">
+            <span className="relative flex h-2 w-2" aria-hidden="true">
+              <span className="absolute inline-flex h-full w-full rounded-full bg-success opacity-60 motion-safe:animate-ping" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-success" />
+            </span>
             {profile.availability}
-          </div>
-          <p className="mt-6 text-base leading-relaxed text-muted">
-            {profile.summary}
           </p>
 
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            <a
-              href="/Subhankar_Roy_Full_Stack_Developer_Resume.pdf"
-              download
-              className="rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-accent-strong hover:shadow-lg hover:shadow-accent/20"
-            >
-              Download Resume
+          <h1 id="hero-title" className="mt-6 text-4xl font-semibold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl">
+            {profile.name}
+            <span className="mt-2 block text-accent">{profile.title}</span>
+          </h1>
+
+          <p className="mt-6 text-lg leading-relaxed text-muted">{profile.intro}</p>
+
+          <ul aria-label="Primary stack" className="mt-6 flex flex-wrap gap-2">
+            {profile.primaryStack.map((t) => (
+              <li key={t} className="rounded-md border border-border bg-surface px-2.5 py-1 text-sm font-medium">
+                {t}
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-8 flex flex-wrap gap-3">
+            <a href="#projects" className={buttonStyles.primary}>
+              View projects <ArrowRight />
             </a>
-            <a
-              href={`mailto:${profile.email}`}
-              className="rounded-full border border-border px-5 py-2.5 text-sm font-medium transition-all duration-200 hover:-translate-y-0.5 hover:border-accent hover:text-accent"
-            >
-              Email Me
+            <a href={resumePath} download data-track="resume_download" className={buttonStyles.secondary}>
+              <Download /> Download resume
             </a>
-            <a
-              href={profile.linkedin}
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-full border border-border px-5 py-2.5 text-sm font-medium transition-all duration-200 hover:-translate-y-0.5 hover:border-accent hover:text-accent"
-            >
-              LinkedIn
-            </a>
-            <a
-              href={profile.github}
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-full border border-border px-5 py-2.5 text-sm font-medium transition-all duration-200 hover:-translate-y-0.5 hover:border-accent hover:text-accent"
-            >
-              GitHub
-            </a>
+            <ExternalLink href={profile.linkedin} track="linkedin_click" className={buttonStyles.secondary}>
+              <LinkedIn /> LinkedIn
+            </ExternalLink>
           </div>
+
+          <p className="mt-6 flex items-center gap-1.5 text-sm text-muted">
+            <MapPin /> {profile.location} · Remote / hybrid
+          </p>
         </div>
 
-        <div className="shrink-0 animate-fade-in-up" style={{ animationDelay: "120ms" }}>
-          <div className="relative h-40 w-40 overflow-hidden rounded-full ring-4 ring-accent-soft ring-offset-4 ring-offset-background transition-transform duration-300 hover:scale-105 sm:h-48 sm:w-48">
+        <div className="order-first md:order-none">
+          <div className="relative mx-auto h-36 w-36 overflow-hidden rounded-2xl border border-border bg-surface shadow-card-lg sm:h-44 sm:w-44 md:h-64 md:w-64">
             <Image
               src="/profile.png"
-              alt={profile.name}
+              alt="Portrait of Subhankar Roy, Senior Full Stack Developer"
               fill
-              sizes="192px"
+              sizes="(min-width: 768px) 256px, (min-width: 640px) 176px, 144px"
               priority
               className="object-cover"
             />
           </div>
         </div>
-      </div>
-
-      <dl className="mt-12 grid gap-4 sm:grid-cols-3">
-        {highlights.map((item) => (
-          <div key={item.label} className="rounded-2xl border border-border bg-surface p-5">
-            <dt className="text-sm font-medium text-muted">{item.label}</dt>
-            <dd className="mt-2 text-2xl font-bold tracking-tight text-accent">{item.value}</dd>
-            <dd className="mt-1 text-xs leading-relaxed text-muted">{item.detail}</dd>
-          </div>
-        ))}
-      </dl>
-
-      <div
-        className="mt-14 animate-fade-in-up"
-        style={{ animationDelay: "220ms" }}
-      >
-        <p className="text-xs font-semibold uppercase tracking-wider text-muted">
-          Core Stack
-        </p>
-        <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
-          {coreStack.map((tech) => (
-            <div
-              key={tech.name}
-              className="group rounded-xl border border-border bg-surface px-4 py-3 text-center transition-all duration-200 hover:-translate-y-1 hover:border-accent hover:shadow-md"
-            >
-              <p className="text-sm font-semibold">{tech.name}</p>
-              <p className="mt-0.5 text-xs text-muted group-hover:text-accent">
-                {tech.group}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
+      </Container>
     </section>
   );
 }
