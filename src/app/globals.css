@@ -109,7 +109,7 @@ details[open] .chevron {
 .prose-blog ol { list-style: decimal; }
 .prose-blog li + li { margin-top: 0.4em; }
 .prose-blog li::marker { color: var(--accent); }
-.prose-blog :not(pre) > code { font-family: var(--font-mono), ui-monospace, monospace; font-size: 0.875em; background: var(--surface-muted); border: 1px solid var(--border); border-radius: 5px; padding: 0.1em 0.35em; color: var(--foreground); }
+.prose-blog :not(pre) > code { font-family: var(--font-mono), ui-monospace, monospace; font-size: 0.875em; background: var(--surface-muted); border: 1px solid var(--border); border-radius: 5px; padding: 0.1em 0.35em; color: var(--foreground); overflow-wrap: anywhere; }
 .prose-blog pre { overflow-x: auto; border-radius: 12px; border: 1px solid var(--border); background: #0f172a; color: #e2e8f0; padding: 1.1rem 1.25rem; font-size: 0.875rem; line-height: 1.65; }
 .prose-blog pre code { font-family: var(--font-mono), ui-monospace, monospace; }
 .prose-blog blockquote { border-left: 3px solid var(--accent); background: var(--accent-soft); border-radius: 0 10px 10px 0; padding: 0.8em 1.1em; }
