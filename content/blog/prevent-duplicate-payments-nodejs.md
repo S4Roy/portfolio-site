@@ -4,7 +4,7 @@ description: A practical guide to idempotent checkout in Node.js and MongoDB: id
 date: 2026-11-26
 tags: Node.js, MongoDB, Payments, E-commerce
 keyword: prevent duplicate payments node js
-draft: true
+draft: false
 ---
 
 A customer taps **Pay** twice on a slow connection. The payment gateway retries a webhook because your server took too long to answer. The browser callback and the webhook arrive within milliseconds of each other. Each of these is ordinary in production, and each can turn one purchase into two orders, two stock deductions or two confirmation emails.

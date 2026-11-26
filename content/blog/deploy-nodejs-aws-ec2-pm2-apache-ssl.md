@@ -4,7 +4,7 @@ description: Step-by-step production deployment of Node.js or Next.js on Ubuntu 
 date: 2026-11-26
 tags: Node.js, Next.js, AWS, DevOps
 keyword: deploy node js on aws ec2
-draft: true
+draft: false
 ---
 
 This is the exact setup that serves this portfolio: a Next.js app on an Ubuntu EC2 instance, kept alive by **PM2**, behind an **Apache** reverse proxy with a free **Let's Encrypt** certificate. The same steps work for any Express.js or Node.js server, and the server can host several apps side by side.
