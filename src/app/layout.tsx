@@ -5,6 +5,7 @@ import { profile, siteUrl } from "@/lib/data";
 import { JsonLd, seo, siteJsonLd } from "@/lib/seo";
 import Analytics from "@/components/Analytics";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import ScrollRestoration from "@/components/ScrollRestoration";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"], display: "swap" });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"], display: "swap", preload: false });
@@ -46,7 +47,7 @@ const themeScript = `(function(){try{var t=localStorage.getItem('theme');if(t===
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+    <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <JsonLd data={siteJsonLd()} />
@@ -57,6 +58,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </a>
         {children}
         <Analytics />
+        <ScrollRestoration />
         <GoogleAnalytics />
       </body>
     </html>

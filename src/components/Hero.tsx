@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { metrics, profile, resumePath } from "@/lib/data";
 import { Container, ExternalLink, buttonStyles } from "@/components/ui";
 import { ArrowRight, Download, LinkedIn, MapPin } from "@/components/icons";
@@ -48,9 +49,9 @@ export default function Hero() {
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">{profile.intro}</p>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href="#projects" className={buttonStyles.primary}>
+            <Link href="/#projects" className={buttonStyles.primary}>
               View projects <ArrowRight />
-            </a>
+            </Link>
             <a href={resumePath} download data-track="resume_download" className={buttonStyles.secondary}>
               <Download /> Download resume
             </a>

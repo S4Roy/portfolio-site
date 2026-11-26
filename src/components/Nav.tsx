@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { resumePath } from "@/lib/data";
 import { Close, Download, Menu, Moon, Sun } from "@/components/icons";
 
@@ -64,14 +65,15 @@ export default function Nav({ home = true }: { home?: boolean }) {
     return () => document.removeEventListener("keydown", onKey);
   }, [open]);
 
-  const href = (id: string) => (home ? `#${id}` : `/#${id}`);
+  // Always route through Next.js <Link> so history entries keep router state (Back/Forward safe).
+  const href = (id: string) => `/#${id}`;
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/85 backdrop-blur-md">
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-4 px-5 sm:px-8">
-        <a href={href("home")} className="text-sm font-semibold tracking-tight">
+        <Link href={href("home")} className="text-sm font-semibold tracking-tight">
           Subhankar Roy
-        </a>
+        </Link>
 
         <nav aria-label="Primary" className="hidden lg:block">
           <ul className="flex items-center gap-1 text-sm">
@@ -79,7 +81,7 @@ export default function Nav({ home = true }: { home?: boolean }) {
               const isActive = home && active === l.id;
               return (
                 <li key={l.id}>
-                  <a
+                  <Link
                     href={href(l.id)}
                     aria-current={isActive ? "location" : undefined}
                     className={`rounded-md px-3 py-1.5 transition-colors ${
@@ -87,7 +89,7 @@ export default function Nav({ home = true }: { home?: boolean }) {
                     }`}
                   >
                     {l.label}
-                  </a>
+                  </Link>
                 </li>
               );
             })}
@@ -104,13 +106,13 @@ export default function Nav({ home = true }: { home?: boolean }) {
           >
             <Download /> Resume
           </a>
-          <a
+          <Link
             href={href("contact")}
             data-track="hire_me_click"
             className="hidden h-9 items-center rounded-lg bg-accent px-3.5 text-sm font-semibold text-white transition-colors hover:bg-accent-strong dark:text-[#0a0f1a] sm:inline-flex"
           >
             Hire me
-          </a>
+          </Link>
           <button
             ref={menuButton}
             type="button"
@@ -130,7 +132,7 @@ export default function Nav({ home = true }: { home?: boolean }) {
           <ul className="mx-auto flex max-w-6xl flex-col px-5 py-3 sm:px-8">
             {links.map((l) => (
               <li key={l.id}>
-                <a
+                <Link
                   href={href(l.id)}
                   onClick={() => setOpen(false)}
                   className={`block rounded-md px-3 py-2.5 text-base ${
@@ -138,16 +140,16 @@ export default function Nav({ home = true }: { home?: boolean }) {
                   }`}
                 >
                   {l.label}
-                </a>
+                </Link>
               </li>
             ))}
             <li className="mt-2 grid grid-cols-2 gap-2 sm:hidden">
               <a href={resumePath} download data-track="resume_download" className="flex h-11 items-center justify-center gap-1.5 rounded-lg border border-border text-sm font-medium">
                 <Download /> Resume
               </a>
-              <a href={href("contact")} onClick={() => setOpen(false)} data-track="hire_me_click" className="flex h-11 items-center justify-center rounded-lg bg-accent text-sm font-semibold text-white dark:text-[#0a0f1a]">
+              <Link href={href("contact")} onClick={() => setOpen(false)} data-track="hire_me_click" className="flex h-11 items-center justify-center rounded-lg bg-accent text-sm font-semibold text-white dark:text-[#0a0f1a]">
                 Hire me
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
