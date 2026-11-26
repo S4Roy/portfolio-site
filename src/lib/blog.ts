@@ -35,7 +35,7 @@ export type Post = {
 const dir = join(process.cwd(), "content/blog");
 
 const slugify = (s: string) =>
-  s.toLowerCase().replace(/<[^>]+>/g, "").replace(/&[a-z]+;/g, "").replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+  s.toLowerCase().replace(/<[^>]+>/g, "").replace(/&#?[a-z0-9]+;/g, "").replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
 function parse(slug: string, raw: string): Post {
   const m = raw.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
