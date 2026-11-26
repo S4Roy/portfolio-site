@@ -17,6 +17,8 @@ export const profile = {
   location: "Kolkata, West Bengal, India",
   email: "subhankarroylive@gmail.com",
   phone: "+91 8906787168",
+  phoneDisplay: "+91 89067 87168",
+  tel: "tel:+918906787168",
   whatsapp: "https://wa.me/918906787168",
   linkedin: "https://www.linkedin.com/in/s4roy/",
   github: "https://github.com/S4Roy/",

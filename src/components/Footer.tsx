@@ -11,6 +11,9 @@ export default function Footer() {
         <div>
           <p className="font-semibold text-foreground">{profile.name}</p>
           <p className="mt-1">{profile.title} · {profile.location}</p>
+          <p className="mt-1">
+            <a href={profile.tel} data-track="contact_phone" className="hover:text-foreground">{profile.phoneDisplay}</a>
+          </p>
           <p className="mt-4">&copy; {new Date().getFullYear()} {profile.name}</p>
         </div>
         <nav aria-label="Expertise">
@@ -28,6 +31,7 @@ export default function Footer() {
             <li><Link href="/resume" className="hover:text-foreground">Resume</Link></li>
             {hasPublishedPosts() && <li><Link href="/blog" className="hover:text-foreground">Blog</Link></li>}
             <li><a href={`mailto:${profile.email}`} className="hover:text-foreground">Email</a></li>
+            <li><ExternalLink href={profile.whatsapp} track="contact_whatsapp" className="hover:text-foreground">WhatsApp</ExternalLink></li>
             <li><ExternalLink href={profile.linkedin} className="hover:text-foreground">LinkedIn</ExternalLink></li>
             <li><ExternalLink href={profile.github} className="hover:text-foreground">GitHub</ExternalLink></li>
           </ul>

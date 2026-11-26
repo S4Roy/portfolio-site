@@ -37,6 +37,15 @@ export default function ResumePage() {
         <div className="max-w-3xl">
           <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Subhankar Roy: Resume</h1>
           <p className="mt-3 text-lg text-muted">{profile.title} · {profile.location} · {profile.availability}</p>
+          <p className="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-sm text-muted">
+            <a href={`mailto:${profile.email}`} data-track="contact_email" className="text-accent hover:text-accent-strong">{profile.email}</a>
+            <span aria-hidden="true">·</span>
+            <a href={profile.tel} data-track="contact_phone" className="text-accent hover:text-accent-strong">{profile.phoneDisplay}</a>
+            <span aria-hidden="true">·</span>
+            <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" data-track="linkedin_click" className="text-accent hover:text-accent-strong">
+              LinkedIn<span className="sr-only"> (opens in a new tab)</span>
+            </a>
+          </p>
         </div>
         <a href={resumePath} download data-track="resume_download" className={buttonStyles.primary}>
           <Download /> Download PDF

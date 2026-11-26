@@ -1,6 +1,6 @@
 import { profile, resumePath } from "@/lib/data";
 import { Container, ExternalLink, buttonStyles } from "@/components/ui";
-import { Download, GitHub, LinkedIn, Mail } from "@/components/icons";
+import { Download, GitHub, LinkedIn, Mail, Phone, WhatsApp } from "@/components/icons";
 
 export default function Contact() {
   return (
@@ -21,6 +21,12 @@ export default function Contact() {
             <a href={`mailto:${profile.email}?subject=Senior%20Full%20Stack%20role`} data-track="contact_email" className={buttonStyles.primary}>
               <Mail /> {profile.email}
             </a>
+            <a href={profile.tel} data-track="contact_phone" className={buttonStyles.secondary}>
+              <Phone /> {profile.phoneDisplay}
+            </a>
+            <ExternalLink href={profile.whatsapp} track="contact_whatsapp" className={buttonStyles.secondary}>
+              <WhatsApp /> WhatsApp
+            </ExternalLink>
             <ExternalLink href={profile.linkedin} track="linkedin_click" className={buttonStyles.secondary}>
               <LinkedIn /> LinkedIn
             </ExternalLink>
