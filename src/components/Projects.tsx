@@ -1,6 +1,8 @@
 import { projects } from "@/lib/data";
 import { Section } from "@/components/ui";
+import Link from "next/link";
 import ProjectCard from "@/components/ProjectCard";
+import { ArrowRight } from "@/components/icons";
 
 export default function Projects() {
   const [first, second, ...rest] = projects;
@@ -20,6 +22,9 @@ export default function Projects() {
           <ProjectCard key={p.slug} project={p} />
         ))}
       </div>
+      <Link href="/projects" className="mt-8 inline-flex items-center gap-1 text-sm font-medium text-accent hover:text-accent-strong">
+        All projects <ArrowRight />
+      </Link>
     </Section>
   );
 }

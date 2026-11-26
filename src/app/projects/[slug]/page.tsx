@@ -68,7 +68,7 @@ export default async function CaseStudyPage({ params }: PageProps<"/projects/[sl
           <nav aria-label="Breadcrumb" className="text-sm text-muted">
             <ol className="flex flex-wrap gap-1.5">
               <li><Link href="/" className="hover:text-foreground">Home</Link> /</li>
-              <li><Link href="/#projects" className="hover:text-foreground">Projects</Link> /</li>
+              <li><Link href="/projects" className="hover:text-foreground">Projects</Link> /</li>
               <li aria-current="page" className="text-foreground">{p.name}</li>
             </ol>
           </nav>

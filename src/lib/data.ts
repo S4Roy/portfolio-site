@@ -4,6 +4,9 @@
 
 export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://subhankarroy.in").replace(/\/$/, "");
 
+// Bump when page content changes; drives sitemap <lastmod> and ProfilePage dateModified.
+export const contentUpdated = "2026-11-26T00:00:00+05:30";
+
 export const resumePath = "/Subhankar_Roy_Full_Stack_Developer_Resume.pdf";
 
 export const profile = {

@@ -1,5 +1,7 @@
 import { skills } from "@/lib/data";
+import Link from "next/link";
 import { Section } from "@/components/ui";
+import { expertise } from "@/lib/expertise";
 
 export default function Skills() {
   return (
@@ -17,6 +19,18 @@ export default function Skills() {
           </div>
         ))}
       </div>
+      <nav aria-label="Expertise" className="mt-8">
+        <h3 className="text-sm font-semibold text-muted">Expertise in depth</h3>
+        <ul className="mt-3 flex flex-wrap gap-2 text-sm">
+          {expertise.map((e) => (
+            <li key={e.slug}>
+              <Link href={`/expertise/${e.slug}`} className="rounded-md border border-border bg-surface px-3 py-1.5 font-medium hover:border-accent hover:text-accent">
+                {e.name} developer
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </Section>
   );
 }

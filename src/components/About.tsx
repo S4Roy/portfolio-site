@@ -3,11 +3,11 @@ import { Section } from "@/components/ui";
 
 export default function About() {
   return (
-    <Section id="about" eyebrow="About" title="Engineer first, stack second">
+    <Section id="about" eyebrow="About" title="About Subhankar Roy">
       <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr]">
         <div className="space-y-4 text-base leading-relaxed text-muted">
           <p>
-            I&apos;m a full stack developer based in Kolkata with 4+ years of full-time experience, plus earlier
+            I&apos;m Subhankar Roy, a senior full stack developer based in Kolkata with 4+ years of full-time experience, plus earlier
             contracts going back to 2020. Most of my work sits where business processes meet software: procurement, travel
             and expenses, document management, e-signature and commerce.
           </p>

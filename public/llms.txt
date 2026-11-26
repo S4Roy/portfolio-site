@@ -1,0 +1,23 @@
+# Subhankar Roy
+
+> Subhankar Roy is a Senior Full Stack Developer based in Kolkata, India, with 4+ years of full-time experience in Node.js, TypeScript, React, Next.js, Angular and MongoDB. Available to join immediately; open to remote and hybrid roles.
+
+## Profile
+
+- [Portfolio home](https://subhankarroy.in/): summary, impact metrics, skills, experience and contact
+- [Resume (PDF)](https://subhankarroy.in/Subhankar_Roy_Full_Stack_Developer_Resume.pdf)
+- [LinkedIn](https://www.linkedin.com/in/s4roy/)
+- [GitHub](https://github.com/S4Roy/)
+
+## Case studies
+
+- [ELEXIFY](https://subhankarroy.in/projects/elexify): multichannel e-commerce, 600+ monthly orders, concurrent checkout and idempotent payments
+- [Rudraksha Valley](https://subhankarroy.in/projects/rudraksha-valley): configurable e-commerce with multi-currency and dual-gateway checkout
+- [SFTravelDesk](https://subhankarroy.in/projects/sftraveldesk): SAP-integrated travel and expense platform for 2,500+ employees
+- [SFTNirman](https://subhankarroy.in/projects/sftnirman): procurement suite for 200+ users across 8 workflows
+
+## Key facts
+
+- Experience: Shyam Future Tech / Shyam Steel Industries (Mar 2024 – Oct 2026), Ivan Infotech (Sep 2022 – Mar 2024), earlier contracts since 2020
+- Results: 93.75% faster document loading (SFTDox), 2,500+ employees served, 200+ procurement users
+- Education: B.Tech in Information Technology, Kalyani Government Engineering College

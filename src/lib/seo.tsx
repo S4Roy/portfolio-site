@@ -1,22 +1,9 @@
-import { profile, siteUrl, skills, type Project } from "@/lib/data";
+import { contentUpdated, profile, siteUrl, skills, type Project } from "@/lib/data";
 
 export const seo = {
-  title: "Subhankar Roy | Senior Full Stack Developer, Node.js · React · Next.js",
+  title: "Subhankar Roy | Senior Full Stack Developer in Kolkata, India",
   description:
-    "Senior Full Stack Developer in Kolkata with 4+ years of experience in Node.js, TypeScript, React, Next.js, Angular and MongoDB. Enterprise SAP integrations, MERN/MEAN commerce platforms. Available immediately.",
-  keywords: [
-    "Subhankar Roy",
-    "Senior Full Stack Engineer",
-    "Senior Full Stack Developer",
-    "Full Stack Developer Kolkata",
-    "Node.js Developer",
-    "MERN Stack Developer",
-    "MEAN Stack Developer",
-    "Next.js Developer",
-    "React Developer",
-    "TypeScript Developer",
-    "Angular Developer",
-  ],
+    "Subhankar Roy is a Senior Full Stack Developer in Kolkata, India with 4+ years in Node.js, Angular, React, Next.js, TypeScript and MongoDB. Available for hire.",
 };
 
 export const personId = `${siteUrl}/#person`;
@@ -26,9 +13,20 @@ export function personJsonLd() {
     "@type": "Person",
     "@id": personId,
     name: profile.name,
+    givenName: "Subhankar",
+    familyName: "Roy",
+    alternateName: ["S4Roy"],
+    description: seo.description,
     jobTitle: profile.title,
+    hasOccupation: {
+      "@type": "Occupation",
+      name: "Full Stack Developer",
+      occupationLocation: { "@type": "City", name: "Kolkata" },
+      skills: profile.primaryStack.join(", "),
+    },
     url: siteUrl,
-    image: `${siteUrl}/profile.png`,
+    mainEntityOfPage: `${siteUrl}/#profilepage`,
+    image: { "@type": "ImageObject", "@id": `${siteUrl}/#portrait`, url: `${siteUrl}/profile.png`, width: 360, height: 360, caption: profile.name },
     email: `mailto:${profile.email}`,
     address: { "@type": "PostalAddress", addressLocality: "Kolkata", addressRegion: "West Bengal", addressCountry: "IN" },
     sameAs: [profile.linkedin, profile.github],
@@ -49,11 +47,31 @@ export function siteJsonLd() {
         "@type": "WebSite",
         "@id": `${siteUrl}/#website`,
         url: siteUrl,
-        name: `${profile.name} Portfolio`,
+        name: profile.name,
+        alternateName: [`${profile.name} Portfolio`, "subhankarroy.in"],
+        description: seo.description,
         inLanguage: "en",
         publisher: { "@id": personId },
       },
     ],
+  };
+}
+
+// Home page only: marks the page as the canonical profile of the Person.
+export function profilePageJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": `${siteUrl}/#profilepage`,
+    url: siteUrl,
+    name: seo.title,
+    description: seo.description,
+    inLanguage: "en",
+    isPartOf: { "@id": `${siteUrl}/#website` },
+    about: { "@id": personId },
+    mainEntity: { "@id": personId },
+    primaryImageOfPage: { "@id": `${siteUrl}/#portrait` },
+    dateModified: contentUpdated,
   };
 }
 
@@ -79,7 +97,7 @@ export function projectJsonLd(p: Project) {
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
-          { "@type": "ListItem", position: 2, name: "Projects", item: `${siteUrl}/#projects` },
+          { "@type": "ListItem", position: 2, name: "Projects", item: `${siteUrl}/projects` },
           { "@type": "ListItem", position: 3, name: p.name, item: url },
         ],
       },
