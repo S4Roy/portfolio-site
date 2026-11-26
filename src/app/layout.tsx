@@ -4,6 +4,7 @@ import "./globals.css";
 import { profile, siteUrl } from "@/lib/data";
 import { JsonLd, seo, siteJsonLd } from "@/lib/seo";
 import Analytics from "@/components/Analytics";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"], display: "swap" });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"], display: "swap", preload: false });
@@ -29,6 +30,8 @@ export const metadata: Metadata = {
     lastName: "Roy",
   },
   twitter: { card: "summary_large_image", title: seo.title, description: seo.description },
+  // Google Search Console HTML-tag verification (optional; DNS verification needs no code).
+  ...(process.env.NEXT_PUBLIC_GSC_VERIFICATION ? { verification: { google: process.env.NEXT_PUBLIC_GSC_VERIFICATION } } : {}),
 };
 
 export const viewport: Viewport = {
@@ -54,6 +57,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </a>
         {children}
         <Analytics />
+        <GoogleAnalytics />
       </body>
     </html>
   );
